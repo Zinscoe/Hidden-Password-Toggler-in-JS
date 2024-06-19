@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Toggle</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="input-box">
+      <!-- this sets the input type to be password and puts the icon
+      in the same div of input-box -->
+        <input type="password" placeholder="password" id="password">
+        <img src="images/hidden-eye.webp" alt="" id="eye-icon">
+    </div>
+
+    <script>
+      /* this assigns the eyeicon to the eye-icon id and assigns 
+      the password to the password id
+      */
+        let eyeicon = document.getElementById("eye-icon");
+        let password = document.getElementById("password");
+          /* this function checks if the password type is of password and if it is
+          then the password type is text and the eye icon changes to eye-open
+          to display the password. And else the password type isn't password, then
+          the password type is set to password/hidden and sets the eye icon to hidden.
+          */
+        eyeicon.onclick = function() {
+            if (password.type == "password") {
+                password.type = "text";
+                eyeicon.src = "images/eye-open.webp";
+            } else {
+                password.type = "password";
+                eyeicon.src = "images/hidden-eye.webp";
+            }
+        }
+    </script>
+</body>
+</html>
